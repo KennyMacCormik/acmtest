@@ -7,10 +7,12 @@ metadata:
   namespace: hello-openshift-namespace
 spec:
   ports:
-  - port: 8080
+  - name: http1
+    port: 8080
     protocol: TCP
     targetPort: 8080
-  - port: 8888
+  - name: http2
+    port: 8888
     protocol: TCP
     targetPort: 8888
   selector:
