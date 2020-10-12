@@ -58,6 +58,9 @@ spec:
   - group: apps.open-cluster-management.io
     kind: Subscription
   selector:
-    matchLabels:
-      app: hello-openshift
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+        - hello-openshift
 status: {}
