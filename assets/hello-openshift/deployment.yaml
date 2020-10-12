@@ -9,24 +9,14 @@ items:
       app.kubernetes.io/component: hello-openshift
       app.kubernetes.io/instance: hello-openshift
   spec:
-    progressDeadlineSeconds: 600
     replicas: 1
-    revisionHistoryLimit: 10
     selector:
       matchLabels:
-        deployment: hello-openshift
-    strategy:
-      rollingUpdate:
-        maxSurge: 25%
-        maxUnavailable: 25%
-      type: RollingUpdate
+        app: hello-openshift
     template:
       metadata:
-        annotations:
-          openshift.io/generated-by: OpenShiftNewApp
-        creationTimestamp: null
         labels:
-          deployment: hello-openshift
+          app: hello-openshift
       spec:
         containers:
         - image: openshift/hello-openshift@sha256:aaea76ff622d2f8bcb32e538e7b3cd0ef6d291953f3e7c9f556c1ba5baf47e2e
