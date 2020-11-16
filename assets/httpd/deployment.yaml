@@ -4,7 +4,7 @@ metadata:
   labels:
     app: httpd
   name: httpd
-  namespace: acm-simple-app
+  #namespace: acm-simple-app
 spec:
   replicas: 1
   selector:
