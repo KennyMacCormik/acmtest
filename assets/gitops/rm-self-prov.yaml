@@ -34,6 +34,10 @@ spec:
                   apiGroup: rbac.authorization.k8s.io
                   kind: ClusterRole
                 #subjects: null
+                subjects:
+                - apiGroup: rbac.authorization.k8s.io
+                  kind: Group
+                  name: system:authenticated:oauth
           remediationAction: enforce
           severity: high
   remediationAction: enforce
