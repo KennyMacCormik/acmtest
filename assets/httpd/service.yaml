@@ -4,7 +4,6 @@ metadata:
   labels:
     app: httpd
   name: httpd
-  #namespace: acm-simple-app
 spec:
   ports:
   - port: 8080

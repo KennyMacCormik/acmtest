@@ -4,7 +4,6 @@ metadata:
   labels:
     app: hello-openshift
   name: hello-openshift-svc
-  namespace: hello-openshift-namespace
 spec:
   ports:
   - name: http1
