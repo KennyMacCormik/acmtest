@@ -3,7 +3,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: Channel
 metadata:
   name: gitops-channel
-  namespace: gitops-channel-ns
+  namespace: default
 spec:
   type: Git
   pathname: https://github.com/KennyMacCormik/acmtest.git
@@ -18,6 +18,6 @@ metadata:
     apps.open-cluster-management.io/git-path: assets/gitops
     apps.open-cluster-management.io/git-branch: master
 spec:
-  channel: gitops-channel-ns/gitops-channel
+  channel: default/gitops-channel
   placement:
     local: true
