@@ -1,0 +1,9 @@
+commonLabels:
+  org: RHTE
+commonAnnotations:
+  note: Hello, I am at Istanbul
+bases:
+- ../../base
+patchesStrategicMerge:
+- configmap.yaml
+- route.yaml

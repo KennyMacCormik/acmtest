@@ -1,0 +1,90 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: gitops-kustomize
+
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: Channel
+metadata:
+  name: web-channel
+  namespace: gitops-kustomize
+spec:
+  pathname: 'https://github.com/KennyMacCormik/acmtest.git'
+  type: GitHub
+
+---
+apiVersion: app.k8s.io/v1beta1
+kind: Application
+metadata:
+  name: web-app     
+  namespace: web-app
+spec:
+  selector:
+    matchExpressions:
+      - key: deployment  
+        operator: In
+        values:
+        - gitops 
+  componentKinds:
+  - group: app.ibm.com/v1alpha1
+    kind: Subscription
+
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: ocpa-placementrule
+  namespace: gitops-kustomize
+spec:
+  clusterSelector:
+    matchLabels:
+      name: ocpa
+
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: ocpb-placementrule
+  namespace: gitops-kustomize
+spec:
+  clusterSelector:
+    matchLabels:
+      name: ocpb
+
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: web-app-ocpa
+  namespace: gitops-kustomize
+  labels:
+    deployment: gitops
+  annotations:
+    apps.open-cluster-management.io/github-branch: master
+    apps.open-cluster-management.io/github-path: assets/gitops/containers/overlays/ocpa
+spec:
+  channel:  web-app/web-app-channel
+  placement: 
+    placementRef: 
+      kind: PlacementRule
+      name: ocpa-placementrule
+
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: web-app-ocpa
+  namespace: gitops-kustomize
+  labels:
+    deployment: gitops
+  annotations:
+    apps.open-cluster-management.io/github-branch: master
+    apps.open-cluster-management.io/github-path: assets/gitops/containers/overlays/ocpb
+spec:
+  channel:  web-app/web-app-channel
+  placement: 
+    placementRef: 
+      kind: PlacementRule
+      name: ocpb-placementrule

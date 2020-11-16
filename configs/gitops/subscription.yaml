@@ -15,7 +15,7 @@ metadata:
   name: remove-self-provision
   namespace: default
   annotations:
-    apps.open-cluster-management.io/git-path: assets/gitops
+    apps.open-cluster-management.io/git-path: assets/gitops/policies
     apps.open-cluster-management.io/git-branch: master
 spec:
   channel: default/gitops-channel
