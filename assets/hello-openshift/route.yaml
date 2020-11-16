@@ -3,9 +3,8 @@ kind: Route
 metadata:
   labels:
     app: hello-openshift
-  name: hello-openshift-route
+  name: hello-openshift
 spec:
-  host: hello-ocp.apps.ocpa.rh.abd
   port:
     targetPort: http1
   to:
