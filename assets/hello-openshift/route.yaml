@@ -2,6 +2,7 @@
   kind: Route
   metadata:
       app: hello-openshift
+      name: hello-openshift-route
   spec:
     host: hello-ocp.apps.ocpa.rh.abd
     port:
