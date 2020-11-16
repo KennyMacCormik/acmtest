@@ -1,7 +1,7 @@
-commonLabels:
-  org: RHTE
-commonAnnotations:
-  note: Hello, I am at Istanbul
+#commonLabels:
+#  org: RHTE
+#commonAnnotations:
+#  note: Hello, I am at Istanbul
 bases:
 - ../../base
 patchesStrategicMerge:
