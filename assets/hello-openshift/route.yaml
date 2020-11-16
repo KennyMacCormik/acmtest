@@ -1,0 +1,13 @@
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+      app: hello-openshift
+  spec:
+    host: hello-ocp.apps.ocpa.rh.abd
+    port:
+      targetPort: http1
+    to:
+      kind: Service
+      name: hello-openshift-svc
+      weight: 100
+    wildcardPolicy: None
