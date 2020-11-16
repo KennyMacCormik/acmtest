@@ -1,0 +1,68 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: Policy
+metadata:
+  name: enforce-self-provision-disabled
+  namespace: default
+  annotations:
+    policy.open-cluster-management.io/standards: GitOps
+spec:
+  disabled: false
+  policy-templates:
+    - objectDefinition:
+        apiVersion: policy.open-cluster-management.io/v1
+        kind: ConfigurationPolicy
+        metadata:
+          name: enforce-self-provision-disabled
+        spec:
+          namespaceSelector:
+            exclude:
+              - kube-*
+            include:
+              - '*'
+          object-templates:
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: rbac.authorization.k8s.io/v1
+                kind: ClusterRoleBinding
+                metadata:
+                  name: self-provisioners
+                  annotations:
+                    rbac.authorization.kubernetes.io/autoupdate: 'false'
+                roleRef:
+                  name: self-provisioner
+                  apiGroup: rbac.authorization.k8s.io
+                  kind: ClusterRole
+                subjects: null
+          remediationAction: enforce
+          severity: high
+  remediationAction: enforce
+
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-enforce-self-provision-disabled
+  namespace: default
+placementRef:
+  name: placement-enforce-self-provision-disabled
+  apiGroup: apps.open-cluster-management.io
+  kind: PlacementRule
+subjects:
+  - name: enforce-self-provision-disabled
+    apiGroup: policy.open-cluster-management.io
+    kind: Policy
+
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: placement-enforce-self-provision-disabled
+  namespace: default
+spec:
+  clusterConditions:
+    - status: 'True'
+      type: ManagedClusterConditionAvailable
+  clusterSelector:
+    matchLabels:
+      gitops: 'true'
