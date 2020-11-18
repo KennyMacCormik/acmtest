@@ -3,4 +3,4 @@ kind: Route
 metadata:
   name: the-route
 spec:
-  host: goodbye.apps.ocpb.rh.abd
+  host: qwerty123.apps.ocpb.rh.abd
