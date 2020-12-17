@@ -1,6 +1,7 @@
 apiVersion: tower.ansible.com/v1alpha1
 kind: AnsibleJob
 metadata:
+  name: test-job
   namespace: ansible-test
 spec:
   tower_auth_secret: 'test-secret'
