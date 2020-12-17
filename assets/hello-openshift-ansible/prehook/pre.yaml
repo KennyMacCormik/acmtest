@@ -4,6 +4,7 @@ metadata:
   generateName: ping-001
   namespace: default
 spec:
+  tower_auth_secret: 'test-secret'
   job_template_name: 'Ping host'
   extra_vars:
     enable_gather_facts: 'true'
