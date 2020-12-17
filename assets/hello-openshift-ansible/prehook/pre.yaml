@@ -4,7 +4,6 @@ metadata:
   generateName: ping-001
   namespace: default
 spec:
-  tower_auth_secret: 'fUY1l3tBxdn3kALkJTUwDlp3krB5IzZsJk73mq6SCk1RUJNe39CmNELmhnCp06JL0QgHhnzGrMZEmUPTIqqLvMYDg43oGNTAaRA9tLco9GiD0PE3YTdSze3aht095BdZ'
   job_template_name: 'Ping host'
   extra_vars:
-    enable_gather_facts: true
+    enable_gather_facts: 'true'
