@@ -1,7 +1,6 @@
 apiVersion: tower.ansible.com/v1alpha1
 kind: AnsibleJob
 metadata:
-  generateName: ping-001
   namespace: ansible-test
 spec:
   tower_auth_secret: 'test-secret'
