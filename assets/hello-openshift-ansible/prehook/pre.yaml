@@ -1,7 +1,7 @@
 apiVersion: tower.ansible.com/v1alpha1
 kind: AnsibleJob
 metadata:
-  namespace: ansible-test
+  namespace: ansible
 spec:
   tower_auth_secret: 'test-secret'
   job_template_name: 'Ping host'
