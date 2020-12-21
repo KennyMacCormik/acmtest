@@ -6,7 +6,7 @@ metadata:
 spec:
   tower_auth_secret: 'test-secret'
   job_template_name: 'haproxy-config'
-  inventory: 'lb2'
+  inventory: 'lb3'
   extra_vars:
-    server_ip_1: '172.29.9.45'
-    server_ip_2: '172.29.9.46'
+    server_ip_1: '172.29.9.65'
+    server_ip_2: '172.29.9.66'
