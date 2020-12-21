@@ -5,6 +5,8 @@ metadata:
   namespace: ansible-test
 spec:
   tower_auth_secret: 'test-secret'
-  job_template_name: 'Ping host'
+  job_template_name: 'haproxy-config'
+  inventory: 'lb2'
   extra_vars:
-    enable_gather_facts: 'true'
+    server_ip_1: '172.29.9.45'
+    server_ip_2: '172.29.9.46'
