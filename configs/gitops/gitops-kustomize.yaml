@@ -8,7 +8,7 @@ metadata:
 apiVersion: apps.open-cluster-management.io/v1
 kind: Channel
 metadata:
-  name: web-channel
+  name: gitops-kustomize-channel
   namespace: gitops-kustomize
 spec:
   pathname: 'https://github.com/KennyMacCormik/acmtest.git'
@@ -40,7 +40,7 @@ metadata:
 spec:
   clusterSelector:
     matchLabels:
-      name: ocpa
+      ai-cluster: ocpa
 
 ---
 apiVersion: apps.open-cluster-management.io/v1
@@ -51,7 +51,7 @@ metadata:
 spec:
   clusterSelector:
     matchLabels:
-      name: ocpb
+      ai-cluster: ocpb
 
 ---
 apiVersion: apps.open-cluster-management.io/v1
@@ -65,7 +65,7 @@ metadata:
     apps.open-cluster-management.io/github-branch: master
     apps.open-cluster-management.io/github-path: assets/gitops/containers/overlays/ocpa
 spec:
-  channel:  gitops-kustomize/web-channel
+  channel:  gitops-kustomize/gitops-kustomize-channel
   placement: 
     placementRef: 
       kind: PlacementRule
@@ -83,7 +83,7 @@ metadata:
     apps.open-cluster-management.io/github-branch: master
     apps.open-cluster-management.io/github-path: assets/gitops/containers/overlays/ocpb
 spec:
-  channel:  gitops-kustomize/web-channel
+  channel:  gitops-kustomize/gitops-kustomize-channel
   placement: 
     placementRef: 
       kind: PlacementRule
