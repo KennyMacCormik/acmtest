@@ -69,4 +69,4 @@ spec:
       type: ManagedClusterConditionAvailable
   clusterSelector:
     matchLabels:
-      gitops: 'true'
+      ai-gitops: 'true'
