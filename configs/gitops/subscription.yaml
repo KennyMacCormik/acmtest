@@ -3,7 +3,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: Channel
 metadata:
   name: gitops-channel
-  namespace: default
+  namespace: gitops-policies
 spec:
   type: Git
   pathname: https://github.com/KennyMacCormik/acmtest.git
@@ -13,7 +13,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: Subscription
 metadata:
   name: remove-self-provision
-  namespace: default
+  namespace: gitops-policies
   annotations:
     apps.open-cluster-management.io/git-path: assets/gitops/policies
     apps.open-cluster-management.io/git-branch: master

@@ -3,7 +3,7 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
   name: enforce-self-provision-disabled
-  namespace: default
+  namespace: gitops-policies
   annotations:
     policy.open-cluster-management.io/standards: GitOps
 spec:
@@ -47,7 +47,7 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
   name: binding-enforce-self-provision-disabled
-  namespace: default
+  namespace: gitops-policies
 placementRef:
   name: placement-enforce-self-provision-disabled
   apiGroup: apps.open-cluster-management.io
@@ -62,7 +62,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: placement-enforce-self-provision-disabled
-  namespace: default
+  namespace: gitops-policies
 spec:
   clusterConditions:
     - status: 'True'
