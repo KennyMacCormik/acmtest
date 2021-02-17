@@ -3,4 +3,4 @@ kind: Route
 metadata:
   name: the-route
 spec:
-  host: qwerty123.apps.ocpb.rh.abd
+  host: acm-cluster.apps.ocp4.rht.demo.mont.com
