@@ -1,4 +1,10 @@
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: gitops-kustomize
+
+---
 apiVersion: apps.open-cluster-management.io/v1
 kind: Channel
 metadata:
