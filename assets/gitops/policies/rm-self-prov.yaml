@@ -21,7 +21,7 @@ spec:
             include:
               - '*'
           object-templates:
-            - complianceType: mustonlyhave
+            - complianceType: musthave
               objectDefinition:
                 apiVersion: rbac.authorization.k8s.io/v1
                 kind: ClusterRoleBinding
