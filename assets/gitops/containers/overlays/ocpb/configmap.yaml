@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: the-map
 data:
-  altGreeting: "This is ocpb's app"
+  altGreeting: "This is acm-cluster app"
