@@ -3,4 +3,4 @@ kind: Route
 metadata:
   name: the-route
 spec:
-  host: acm-cluster.apps.ocp4.rht.demo.mont.com
+  host: acm-cluster.apps.acm-ocp4.rh.abd
