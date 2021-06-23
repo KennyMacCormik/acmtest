@@ -6,7 +6,6 @@ metadata:
     app: httpd
   name: httpd-route
 spec:
-  host: poc-cluster.apps.poc.ocp4.test
   port:
     targetPort: 8080
   to:
