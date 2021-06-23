@@ -2,12 +2,14 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: the-route
+  labels:
+    app: httpd
+  name: httpd-route
 spec:
-  host: changeme
+  host: poc-cluster.apps.poc.ocp4.test
   port:
     targetPort: 8080
   to:
     kind: Service
-    name: the-service
+    name: httpd
     weight: 100
