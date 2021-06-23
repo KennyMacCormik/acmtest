@@ -8,7 +8,7 @@ metadata:
 apiVersion: apps.open-cluster-management.io/v1
 kind: Channel
 metadata:
-  name: gitops-channel
+  name: gitops-policies-channel
   namespace: gitops-policies
 spec:
   type: Git
