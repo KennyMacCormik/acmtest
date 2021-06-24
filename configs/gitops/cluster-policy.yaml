@@ -24,6 +24,6 @@ metadata:
     apps.open-cluster-management.io/git-path: assets/gitops/policies
     apps.open-cluster-management.io/git-branch: master
 spec:
-  channel: gitops-policies/gitops-channel
+  channel: gitops-policies/gitops-policies-channel
   placement:
     local: true
