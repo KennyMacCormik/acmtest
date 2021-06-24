@@ -27,7 +27,7 @@ spec:
                 kind: ClusterRoleBinding
                 metadata:
                   name: self-provisioners
-                  annotations: null
+                  annotations:
                 #    rbac.authorization.kubernetes.io/autoupdate: 'true'
                 roleRef:
                   name: self-provisioner
