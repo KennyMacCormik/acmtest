@@ -3,4 +3,4 @@ kind: Route
 metadata:
   name: the-route
 spec:
-  host: poc-cluster.apps.poc.ocp4.test
+  host: test.apps.clustera-ocp4.rh.abd
