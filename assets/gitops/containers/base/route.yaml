@@ -4,7 +4,7 @@ kind: Route
 metadata:
   name: the-route
 spec:
-  host: changeme
+  #host: changeme
   port:
     targetPort: 8080
   to:
