@@ -1,0 +1,8 @@
+---
+apiVersion: hive.openshift.io/v1
+kind: MachinePool
+metadata:
+  name: kftv-f19-worker
+  namespace: kftv-f19
+spec:
+  replicas: 4
