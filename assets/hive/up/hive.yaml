@@ -5,4 +5,4 @@ metadata:
   name: kftv-f19-worker
   namespace: kftv-f19
 spec:
-  replicas: 3
+  replicas: 4
