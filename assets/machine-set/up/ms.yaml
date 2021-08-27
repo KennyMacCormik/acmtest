@@ -5,3 +5,41 @@ metadata:
   namespace: openshift-machine-api
 spec:
   replicas: 4
+  selector:
+    matchLabels:
+      machine.openshift.io/cluster-api-cluster: kftv-f19-9sk44
+      machine.openshift.io/cluster-api-machineset: kftv-f19-9sk44-worker
+  template:
+    metadata:
+      labels:
+        machine.openshift.io/cluster-api-cluster: kftv-f19-9sk44
+        machine.openshift.io/cluster-api-machine-role: worker
+        machine.openshift.io/cluster-api-machine-type: worker
+        machine.openshift.io/cluster-api-machineset: kftv-f19-9sk44-worker
+    spec:
+      metadata: {       }       
+      providerSpec:
+        value:
+          apiVersion: vsphereprovider.openshift.io/v1beta1
+          credentialsSecret:
+            name: vsphere-cloud-credentials
+          diskGiB: 120
+          kind: VSphereMachineProviderSpec
+          memoryMiB: 16384
+          metadata:
+            creationTimestamp: null
+          network:
+            devices:
+            - networkName: 10.10.190.64%2f26  OpenShift
+          numCPUs: 4
+          numCoresPerSocket: 2
+          snapshot: ""
+          template: kftv-f19-9sk44-rhcos
+          userDataSecret:
+            name: worker-user-data
+          workspace:
+            datacenter: KV-CENTER
+            datastore: vsanDatastore
+            folder: /KV-CENTER/vm/Unix/PILOT/kftv-f19
+            resourcePool: /KV-CENTER/host/vSANCluster/Resources
+            server: sfpv-vcen001.fz.fozzy.lan
