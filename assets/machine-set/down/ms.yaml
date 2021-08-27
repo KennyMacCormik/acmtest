@@ -1,0 +1,7 @@
+apiVersion: machine.openshift.io/v1beta1
+kind: MachineSet
+metadata:
+  name: kftv-f19-9sk44-worker
+  namespace: openshift-machine-api
+spec:
+  replicas: 3
